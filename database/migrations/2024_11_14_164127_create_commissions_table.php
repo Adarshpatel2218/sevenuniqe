@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('labor__category', function (Blueprint $table) {
+        Schema::create('commissions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('package_name'); 
+            $table->integer('service_type'); 
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('labor__category');
+        Schema::dropIfExists('commissions');
     }
 };

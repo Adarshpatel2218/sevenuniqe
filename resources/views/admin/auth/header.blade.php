@@ -119,7 +119,7 @@
                                     @if($user->image)
                                         <span class="user_pic"> <img src="{{ asset('public/staff/' . $user->image) }}" class="img" alt="Admin Image"/></span>
                                     @else
-                                    <span class="user_pic"> <img src="{{ url('public/superadmin/img/profile_img.png') }}" class="img" /> </span>
+                                    <span class="user_pic"> <img src="{{ url('admin/img/profileimage.jpg') }}" class="img" /> </span>
                                     @endif
                                     <span class="userprodrop">
                                         <strong>{{ $superName }}</strong>

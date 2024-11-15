@@ -31,8 +31,8 @@
     <meta charset="UTF-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" href="{{asset('admin/img/fevi.ico?' . time()) }}">
-    <link rel="icon" type="image/png" href="{{ asset('admin/img/fevi.ico?' . time()) }}">
+    <link rel="apple-touch-icon" href="{{ asset('admin/img/logo.png?' . time()) }}">
+    <link rel="icon" type="image/png" href="{{ asset('admin/img/logo.png?' . time()) }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/bootstrap.min.css?' . time()) }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/simple-calendar.css?' . time()) }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/font-awesome.min.css?' . time()) }}">
@@ -44,7 +44,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- toastr Notifications CSS link -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"/>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
     @stack('head-style')
 </head>
@@ -95,6 +95,21 @@
 
     <script src="{{ asset('admin/js/common.js?' . time()) }}"></script>
     <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const navLink = document.querySelector('a[data-bs-toggle="collapse"]');
+    const arrowIcon = navLink.querySelector('.toggle-arrow');
+
+    navLink.addEventListener('click', function () {
+        if (navLink.getAttribute('aria-expanded') === 'true') {
+            arrowIcon.classList.remove('fa-chevron-down');
+            arrowIcon.classList.add('fa-chevron-up');
+        } else {
+            arrowIcon.classList.remove('fa-chevron-up');
+            arrowIcon.classList.add('fa-chevron-down');
+        }
+    });
+});
+
         function showSuccessMessage(message) {
             Swal.fire({
                 position: "top-end",

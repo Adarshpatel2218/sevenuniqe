@@ -39,15 +39,15 @@
 });
 </script>
 @endif
-<img src="{{ asset('admin/img/login-page-bg.jpg') }}" alt="img" class="login-image" style="display: ;">
+<img src="{{ asset('admin/img/bgimage.avif') }}" alt="img" class="login-image" style="display: ;">
         <div class="login-form-wrapper" style="border: 1px solid #e5e6e7;">
         <form action="{{ route('admin.loginprocess') }}" method="POST">
             @csrf
                 <div class="login-logo text-center">
-                    <img src="{{ asset('admin/img/login-logo.png') }}" alt="logo" >
+                    <img src="{{ asset('admin/img/logo.png') }}" alt="logo" >
                 </div>
                 <h2 class="text-center">Welcome Back</h2>
-                {{-- <h3>Login to your account</h3> --}}
+                <h3>Login to your account</h3>
                 <div class="loginForm">
                     <div class="input_group">
                         <input type="text" name="email" id="email" class="form-control" placeholder="Username">

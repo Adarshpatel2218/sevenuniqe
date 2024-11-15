@@ -13,13 +13,24 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uid');
+            $table->tinyInteger('role')->default(1)->comment('1-superadmin,1-admin,2-superadmin');
+            $table->string('username'); 
             $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('email')->nullable();
+            $table->string('client_secret')->nullable();
+            $table->string('confirm_client_secret')->nullable(); 
+            $table->string('password')->nullable();
+            $table->string('confirm_password')->nullable(); 
+            $table->string('payin_callback')->nullable(); 
+            $table->string('payout_callback')->nullable(); 
+            $table->string('ip_address')->nullable();
+            $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
+        
+      
     }
 
     /**

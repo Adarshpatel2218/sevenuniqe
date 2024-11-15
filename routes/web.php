@@ -29,6 +29,7 @@ Route::get('/admin/add-labor', ['App\Http\Controllers\FilterController', 'addlab
 Route::get('/admin-login', [AdminController::class, 'loginPage'])->name('admin.login');
 Route::post('/admin/loginprocess', [AdminController::class, 'loginProcess'])->name('admin.loginprocess');
 Route::get('/admin/dashboard', [AdminController::class, 'adminDashboard'])->name('admin.dashboard');
+Route::get('/admin/auth/login', [AdminController::class, 'loginPage'])->name('admin.auth.login');
 
 Route::group(['middleware' => ['auth:admin']], function () {
     //admin
